@@ -1,37 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tiptap Document Editor with Real-Time Pagination
 
-## Getting Started
+A production-ready rich text editor built using **Tiptap + Next.js** that visually paginates content in real time, allowing users to see exactly how their legal documents will appear when printed.
 
-First, run the development server:
+This project mirrors the pagination experience of **Google Docs / Microsoft Word** while preserving ProseMirror’s document stability.
+
+---
+
+## 🚀 Overview
+
+Immigration professionals drafting USCIS documents need confidence in:
+- What content appears on each page
+- Where page breaks occur
+- How formatting affects printed output
+
+This editor provides **live visual pagination** while maintaining a **single continuous document model**, ensuring a stable cursor, reliable selection, and print-accurate formatting.
+
+---
+
+## ✨ Features
+
+### ✅ Real-Time Pagination
+- Automatic visual page breaks as users type
+- Clear separation between pages
+- Continuous typing flow across pages
+
+### ✅ Print-Accurate Layout
+- US Letter size (8.5" × 11")
+- Standard 1-inch margins
+- Editor layout matches printed output exactly
+
+### ✅ Rich Text Formatting
+- Headings
+- Paragraphs
+- Bold / Italic
+- Text alignment
+- Bullet lists
+
+### ✅ Stable Editing Experience
+- No document mutation for pagination
+- Cursor and selection remain intact
+- No runtime range or hydration errors
+
+---
+
+## 🧠 Technical Approach
+
+### Key Design Principle
+
+> Pagination is handled visually, not structurally.
+
+The editor maintains a **single ProseMirror document**.  
+Page boundaries are rendered using **CSS-based layout techniques**, rather than inserting page break nodes into the document.
+
+This approach:
+- Matches how Google Docs handles pagination
+- Avoids cursor and selection corruption
+- Scales cleanly for long documents
+
+---
+
+## 📐 Page Specifications
+
+| Property | Value |
+|-------|-------|
+| Paper Size | US Letter |
+| Width | 8.5 in (816px @ 96 DPI) |
+| Height | 11 in (1056px @ 96 DPI) |
+| Margins | 1 in (96px) |
+| Content Height | 864px |
+
+---
+## 🛠️ Tech Stack
+
+- Next.js (App Router)
+- React
+- Tiptap (ProseMirror)
+- Tailwind CSS
+- TypeScript
+
+---
+
+## 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# TipTap-Editor
+git clone https://github.com/your-username/tiptap-pagination-editor.git
+cd tiptap-pagination-editor
+npm install
