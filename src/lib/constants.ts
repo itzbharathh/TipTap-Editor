@@ -17,7 +17,10 @@
 
 // export const CONTENT_HEIGHT_PX = PAGE_HEIGHT_PX - MARGIN_PX * 2;
 
-export const PAGE_WIDTH = 816; // 8.5 * 96
-export const PAGE_HEIGHT = 1056; // 11 * 96
-export const MARGIN = 96; // 1 inch
-export const CONTENT_HEIGHT = PAGE_HEIGHT - MARGIN * 2;
+// A4 page size in pixels (96 DPI)
+export const PAGE_WIDTH_PX = 794;
+export const PAGE_HEIGHT_PX = 1123;
+
+// Page margin
+export const MARGIN_PX = 40;
+export const CONTENT_HEIGHT = PAGE_HEIGHT_PX - MARGIN_PX * 2;
